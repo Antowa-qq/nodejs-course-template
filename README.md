@@ -8,7 +8,7 @@
 ## Downloading
 
 ```
-git clone {repository URL}
+git clone https://github.com/Antowa-qq/nodejs-course-template.git
 ```
 
 ## Installing NPM modules
