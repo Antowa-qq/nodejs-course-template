@@ -1,25 +1,16 @@
 const uuid = require('uuid');
 
 class Board {
-  constructor({
-    id = uuid(),
-    title = '',
-    columns = [
-      {
-        title: '',
-        orderd: 0
-      }
-    ]
-  } = {}) {
+  constructor({ id = uuid(), title, columns = [] } = {}) {
     this.id = id;
     this.title = title;
     this.columns = columns;
   }
 
-  // static toResponse(user) {
-  //   const { id, name, login } = user;
-  //   return { id, name, login };
-  // }
+  static toResponse(board) {
+    const { id, title, columns } = board;
+    return { id, title, columns };
+  }
 }
 
 module.exports = Board;
