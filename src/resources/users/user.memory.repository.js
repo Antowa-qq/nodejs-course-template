@@ -26,6 +26,13 @@ const updateUserById = async (id, data) => {
 const deleteUserById = async id => {
   const index = db.Users.findIndex(user => user.id === id);
   db.Users.splice(index, 1);
+  db.Tasks = db.Tasks.map(task => {
+    if (task.userId === id) {
+      task.userId = null;
+    }
+    return task;
+  });
+
   return 'success';
 };
 module.exports = {

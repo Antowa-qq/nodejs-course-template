@@ -25,9 +25,7 @@ const updateBoardById = async (id, data) => {
 const deleteBoardById = async id => {
   const index = db.Boards.findIndex(board => board.id === id);
   db.Boards.splice(index, 1);
-  // const boardIndex = db.Boards.findIndex(el => el.id === id);
-  // db.Boards.splice(boardIndex, 1);
-  // db.Tasks = db.Tasks.filter(el => el.boardId !== id);
+  db.Tasks = db.Tasks.filter(task => task.boardId !== id);
   return 'success';
 };
 module.exports = {
